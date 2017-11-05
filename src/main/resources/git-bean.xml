@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean name="gitRepositoryInformation" class="pl.project13.maven.git.GitRepositoryState">
+        <property name="tags" value="${git.tags}"/>
+        <property name="branch" value="${git.branch}"/>
+
+
+        <property name="commitId" value="${git.commit.id.full}"/>
+        <!-- OR value="${git.commit.id}" depending on your configuration of commitIdGenerationMode -->
+        <property name="commitIdAbbrev" value="${git.commit.id.abbrev}"/>
+        <property name="commitUserName" value="${git.commit.user.name}"/>
+        <property name="commitUserEmail" value="${git.commit.user.email}"/>
+        <property name="commitMessageFull" value="${git.commit.message.full}"/>
+        <property name="commitMessageShort" value="${git.commit.message.short}"/>
+        <property name="commitTime" value="${git.commit.time}"/>
+
+        <property name="buildUserName" value="${git.build.user.name}"/>
+        <property name="buildUserEmail" value="${git.build.user.email}"/>
+        <property name="buildTime" value="${git.build.time}"/>
+    </bean>
+</beans>
